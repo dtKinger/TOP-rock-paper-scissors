@@ -59,3 +59,8 @@ button:hover{
   max-width: 80%;
   justify-content: center;
 }
+
+.choices{
+  display: flex;
+  flex-direction: row;
+}
