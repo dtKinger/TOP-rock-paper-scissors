@@ -8,7 +8,7 @@ const playerThrow = "rock";
 
 function playRound(player, computer){
 
-  player = ranPlayerThrow();
+  player = playerThrow;
   computer = getComputerThrow();
   console.log(computer);
 
