@@ -4,11 +4,7 @@ function getComputerThrow(){
   return throwOptions[Math.floor(Math.random() * throwOptions.length)];
 }
 
-// A function to quickly test game alert messages //
-function ranPlayerThrow(){
-  return throwOptions[Math.floor(Math.random() * throwOptions.length)];
-}
-// const playerThrow = "rock";
+const playerThrow = "rock";
 
 function playRound(player, computer){
 
