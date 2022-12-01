@@ -25,7 +25,7 @@ footer{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 25px;
   gap: 10px;
 }
 
