@@ -99,6 +99,12 @@ button:active {
   justify-content: center;
 }
 
+.results{
+  margin: 0 auto;
+  top: 20vh;
+  padding: 0px 20px;
+  position: absolute;
+}
 
 .result-msg{
   background-color: transparent;
@@ -106,15 +112,25 @@ button:active {
   text-align: center;
   font-weight: 900;
   font-size: 3rem;
-  position: absolute;
-  margin: 0 auto;
-  top: 25vh;
-  padding: 0px 20px;
+}
+
+.computer-throw{
+  background-color: transparent;
+  color: rgb(73, 73, 73);
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.3rem;
+  padding-top: 10px;
 }
 
 .animate{
   display: block;
   animation: throwIn 0.75s;
+}
+
+.animate-right{
+  display: block;
+  animation: compThrowIn 0.75s;
 }
 
 @media screen and (max-width: 480px){
@@ -125,11 +141,18 @@ button:active {
 
   .result-msg{
     font-size: 2.5rem;
-    top: 15vh;
+  }
+
+  .computer-throw{
+    font-size: 1rem;
   }
 
   .animate{
     animation: throwInMobile 0.75s;
+  }
+
+  .animate-right{
+    animation: compThrowInMobile 0.75s;
   }
 }
 
@@ -140,6 +163,16 @@ button:active {
 
 @keyframes throwInMobile {
   0% { opacity: 0; top:0vh; transform: translate(-20rem, -5rem) rotate(-360deg) scale(0);}
+  100% { opacity: 1; top:15vh; transform: translate(0%, 0%) rotate(0deg) scale(1);}
+}
+
+@keyframes compThrowIn {
+  0% { opacity: 0; top:0vh; transform: translate(40rem, 10rem) rotate(-360deg) scale(0);}
+  100% { opacity: 1; top:25vh; transform: translate(0%, 0%) rotate(0deg) scale(1);}
+}
+
+@keyframes compThrowInMobile {
+  0% { opacity: 0; top:0vh; transform: translate(20rem, 5rem) rotate(-360deg) scale(0);}
   100% { opacity: 1; top:15vh; transform: translate(0%, 0%) rotate(0deg) scale(1);}
 }
 

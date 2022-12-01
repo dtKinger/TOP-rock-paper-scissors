@@ -25,6 +25,7 @@ function getComputerThrow(){
 const choices = document.querySelector('.choices');
 const btns = choices.querySelectorAll('button');
 
+
 // for Each loop to add a VALUE event listener to buttons
 btns.forEach(function (i) {
   i.addEventListener('click', function() {
@@ -43,7 +44,10 @@ listener to buttons (for bonus marks!)
 btns.forEach(function (rm) {
   rm.addEventListener('click', function() {
     // Assign a different color based on Win, Tie, Loss
+    // And also throw the computer's choice.
     let resultsMessage = document.getElementById("result-msg");
+    let computerMessage = document.getElementById("computer-throw");
+    
     if (rsltMsg == winningMsg){
       resultsMessage.style.color = "darkgreen";
     } else if (rsltMsg == tyingMsg) {
@@ -53,14 +57,22 @@ btns.forEach(function (rm) {
     };
     
     resultsMessage.textContent = rsltMsg;
+    computerMessage.textContent = `The computer throws ${computer}.`;
     
+
     /* 
     Reset animation every click. Clone the results message
     then replace the old with the clone! 
     */
     let newResultsMessage = resultsMessage.cloneNode(true);
     resultsMessage.parentNode.replaceChild(newResultsMessage, resultsMessage);
+
+    // Repeat the reset for Computer throw animation
+    let newcomputerMessage = computerMessage.cloneNode(true);
+    computerMessage.parentNode.replaceChild(newcomputerMessage, computerMessage);
     
+
+
   });
 });
 
