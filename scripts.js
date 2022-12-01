@@ -59,6 +59,31 @@ function playRound(playerX, computerX) {
   console.log("Computer throws down " + computer.toUpperCase() + "!");
   console.log(`Player throws down ${playerThrow}!`);
 
+  if (playerThrow === computer){
+    rsltMsg = tyingMsg
+  } else if (playerThrow == "rock"){
+    if (computer == "scissors"){
+      rsltMsg = winningMsg
+    } else if (computer == "paper") {
+      rsltMsg = losingMsg
+    }
+  } else if (playerThrow == "paper"){
+    if (computer == "rock"){
+      rsltMsg = winningMsg
+    } else if (computer == "scissors") {
+      rsltMsg = losingMsg
+    }
+  } else if (playerThrow == "scissors"){
+    if (computer == "paper"){
+      rsltMsg = winningMsg
+    } else if (computer == "rock") {
+      rsltMsg = losingMsg
+    }
+  }
+};
+
+
+  /*
   if (playerThrow == "rock"){
     if (computer == "scissors"){
       rsltMsg = winningMsg;
@@ -85,3 +110,4 @@ function playRound(playerX, computerX) {
     }
   }   
 };
+*/
