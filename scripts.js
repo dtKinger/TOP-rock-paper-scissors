@@ -12,16 +12,17 @@ let playerThrow = null;
 // Create an array for the computer to choose from.
 const throwOptions = ["rock", "paper", "scissors"];
 
-// Pick a random index in throwOptions array, which grabs its value.
+// Pick a random index in throwOptions array, which returns its value.
 function getComputerThrow(){
   return throwOptions[Math.floor(Math.random() * throwOptions.length)];
 }
+
 
 // Select all buttons inside a .choices class (limited selector scope)
 const choices = document.querySelector('.choices');
 const btns = choices.querySelectorAll('button');
 
-// for Each loops to add an event listener to buttons
+// for Each loop to add a VALUE event listener to buttons
 btns.forEach(function (i) {
   i.addEventListener('click', function() {
     playerThrow = i.getAttribute('value');
@@ -31,6 +32,17 @@ btns.forEach(function (i) {
 
   });
 });
+
+// for Each loop to add a RESULTS MESSAGE event listener to buttons
+btns.forEach(function (x) {
+  x.addEventListener('click', function() {
+    let resultsMessage = document.getElementById("result-msg");
+    resultsMessage.style.color = "blue";
+    resultsMessage.style.display = "block";
+    resultsMessage.textContent = rsltMsg;
+  });
+});
+
 
 /* ============================
 Playing one round of the game
@@ -44,27 +56,27 @@ function playRound(playerX, computerX) {
 
   if (playerThrow == "rock"){
     if (computer == "scissors"){
-      alert("YOUR ROCK smashes the scissors to pieces!");
+      rsltMsg = "YOUR ROCK smashes the scissors to pieces!";
     } else if (computer == "paper" ) {
-      alert("COMPUTER'S PRINTER PAPER smothers your pet rock!");
+      rsltMsg = "COMPUTER'S PRINTER PAPER smothers your pet rock!";
     } else {
-      alert("DRAW!");
+      rsltMsg = "DRAW!";
     }
   } else if (playerThrow == "paper"){
     if (computer == "scissors"){
-      alert("COMPUTER SCISSOR HANDS dices you up!");
+      rsltMsg = "COMPUTER SCISSOR HANDS dices you up!";
     } else if (computer == "rock" ) {
-      alert("YOU SMOTHER the computer's pet rock!");
+      rsltMsg = "YOU SMOTHER the computer's pet rock!";
     } else {
-      alert("DRAW!");
+      rsltMsg = "DRAW!";
     }
   } else if (playerThrow == "scissors"){
     if (computer == "paper"){
-      alert("YOU absolutely SHRED what they're printing out!");
+      rsltMsg = "YOU absolutely SHRED what they're printing out!";
     } else if (computer == "rock" ) {
-      alert("Your scissors are now scissorses... they've been smashed to pieces by ELECTRONIC ROCK!");
+      rsltMsg = "Your scissors are now scissorses... they've been smashed to pieces by ELECTRONIC ROCK!";
     } else {
-      alert("DRAW!");
+      rsltMsg = "DRAW!";
     }
   }   
 };

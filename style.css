@@ -73,3 +73,13 @@ button:hover{
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
+.result-msg{
+  background-color: transparent;
+  color: black;
+  text-align: center;
+  display: none;
+  position: absolute;
+  margin: 0 auto;
+  top: 35vh;
+}
