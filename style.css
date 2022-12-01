@@ -52,6 +52,10 @@ button:hover{
   flex: 1;
 }
 
+.container h2{
+  text-align: center;
+}
+
 .item{
   display: flex;
   flex: 1;
@@ -67,4 +71,5 @@ button:hover{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
