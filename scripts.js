@@ -53,12 +53,16 @@ btns.forEach(function (rm) {
     };
     
     resultsMessage.textContent = rsltMsg;
-    /* Clear the animate class and add it again 
-    after a 10ms timeout to restart the animation */
-    resultsMessage.classList.remove("animate");
-    setTimeout(() => {
-      resultsMessage.classList.add("animate");
-    }, 10)
+
+    /*
+    const el = this;
+      var newone = elm.cloneNode(true);
+      elm.parentNode.replaceChild(newone, elm);
+    */
+
+    let newResultsMessage = resultsMessage.cloneNode(true);
+    resultsMessage.parentNode.replaceChild(newResultsMessage, resultsMessage);
+    
   });
 });
 
