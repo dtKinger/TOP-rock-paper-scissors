@@ -34,12 +34,12 @@ btns.forEach(function (i) {
 });
 
 // for Each loop to add a RESULTS MESSAGE event listener to buttons
-btns.forEach(function (x) {
-  x.addEventListener('click', function() {
+btns.forEach(function (rm) {
+  rm.addEventListener('click', function() {
     let resultsMessage = document.getElementById("result-msg");
     resultsMessage.style.color = "blue";
-    resultsMessage.style.display = "block";
     resultsMessage.textContent = rsltMsg;
+    resultsMessage.style.display = "block";
   });
 });
 

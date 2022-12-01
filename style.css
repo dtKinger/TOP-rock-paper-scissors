@@ -83,3 +83,9 @@ button:hover{
   margin: 0 auto;
   top: 35vh;
 }
+
+@media screen and (max-width: 480px){
+  .result-msg{
+  top: 25vh;
+  }
+}
