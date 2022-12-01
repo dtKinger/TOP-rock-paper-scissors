@@ -47,7 +47,7 @@ button:hover{
 }
 
 button:active {
-  transform: scale(0.75);
+  transform: scale(0.85);
   /* Scaling button to 0.98 to its original size */
   /* box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);*/
   /* Lowering the shadow */
@@ -113,7 +113,7 @@ button:active {
 
 .animate{
   display: block;
-  animation: throwIn 1s;
+  animation: throwIn 0.75s;
 }
 
 @media screen and (max-width: 480px){
@@ -122,23 +122,22 @@ button:active {
     max-height: 85vh;
   }
 
-  
   .result-msg{
     font-size: 2.5rem;
     top: 15vh;
   }
 
   .animate{
-    animation: throwInMobile 1s;
+    animation: throwInMobile 0.75s;
   }
 }
 
 @keyframes throwIn {
-  0% { opacity: 0; top:0vh; }
-  100% { opacity: 1; top:25vh;  }
+  0% { opacity: 0; top:0vh; transform: translate(-40rem, -10rem) rotate(-360deg) scale(0);}
+  100% { opacity: 1; top:25vh; transform: translate(0%, 0%) rotate(0deg) scale(1);}
 }
 
 @keyframes throwInMobile {
-  0% { opacity: 0; top:0vh; }
-  100% { opacity: 1; top:15vh; }
+  0% { opacity: 0; top:0vh; transform: rotate(-180deg);}
+  100% { opacity: 1; top:15vh; transform: rotate(0deg);}
 }
