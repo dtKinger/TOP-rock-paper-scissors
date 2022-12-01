@@ -73,6 +73,7 @@ button:active {
   justify-content: center;
   gap: 20px;
   flex: 1;
+  padding-top: 20vh;
 }
 
 .choices{
@@ -140,4 +141,37 @@ button:active {
 @keyframes throwInMobile {
   0% { opacity: 0; top:0vh; transform: translate(-20rem, -5rem) rotate(-360deg) scale(0);}
   100% { opacity: 1; top:15vh; transform: translate(0%, 0%) rotate(0deg) scale(1);}
+}
+
+
+.score{
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.player-score, .computer-score {
+  font-size: 60px;
+  color: black;
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-score::before{
+  content: 'Player 1';
+  font-size: 20px;
+  font-weight: 800;
+  position: absolute;
+  left: -100px;
+}
+
+.computer-score::after{
+  content: 'Computer';
+  font-size: 20px;
+  font-weight: 800;
+  position: absolute;
+  right: -115px;
 }
