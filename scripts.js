@@ -14,7 +14,8 @@ function getComputerThrow(){
   return throwOptions[Math.floor(Math.random() * throwOptions.length)];
 }
 
-let btns = document.querySelectorAll('button');
+
+const btns = document.querySelectorAll('button');
 
 
 btns.forEach(function (i) {
