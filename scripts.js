@@ -8,18 +8,18 @@
 // Initialize game's inputs. App doesn't run without this.
 let computer = null;
 let playerThrow = null;
+// Initialize some values. App would still run but have empty results.
 const winningMsg = "You WIN this round!";
 const losingMsg = "You LOSE this round!";
-const tyingMsg = "TIE, Throw again!";
+const tyingMsg = "TIE, throw again!";
 
 // Create an array for the computer to choose from.
 const throwOptions = ["rock", "paper", "scissors"];
 
-// Pick a random index in throwOptions array, which returns its value.
+// Pick a random index from throwOptions array, which returns its value.
 function getComputerThrow(){
   return throwOptions[Math.floor(Math.random() * throwOptions.length)];
 }
-
 
 // Select all buttons inside a .choices class (limited selector scope)
 const choices = document.querySelector('.choices');
@@ -36,13 +36,22 @@ btns.forEach(function (i) {
   });
 });
 
-// for Each loop to add a RESULTS MESSAGE event listener to buttons
+/* ==========================================
+for Each loop to add a RESULTS MESSAGE event 
+listener to buttons (for bonus marks!)
+========================================== */
 btns.forEach(function (rm) {
   rm.addEventListener('click', function() {
+    // Assign a different color based on Win, Tie, Loss
     let resultsMessage = document.getElementById("result-msg");
-    resultsMessage.style.color = 
-    function(){
+    if (rsltMsg == winningMsg){
+      resultsMessage.style.color = "darkgreen";
+    } else if (rsltMsg == tyingMsg) {
+      resultsMessage.style.color = "darkblue";
+    } else if (rsltMsg == losingMsg) {
+      resultsMessage.style.color = "#f91c1c";
     };
+    
     resultsMessage.textContent = rsltMsg;
     resultsMessage.style.display = "block";
   });

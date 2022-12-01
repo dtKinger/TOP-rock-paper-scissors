@@ -78,10 +78,12 @@ button:hover{
   background-color: transparent;
   color: black;
   text-align: center;
-  display: none;
+  font-weight: 900;
+  font-size: 36px;
   position: absolute;
   margin: 0 auto;
   top: 35vh;
+  display: none;
 }
 
 @media screen and (max-width: 480px){
