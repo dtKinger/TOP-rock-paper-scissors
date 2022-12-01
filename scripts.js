@@ -1,38 +1,29 @@
+let computer;
+
 const throwOptions = ["rock", "paper", "scissors"];
 
 function getComputerThrow(){
   return throwOptions[Math.floor(Math.random() * throwOptions.length)];
 }
 
-// const playerThrow = "rock";
-
-/* Try #1 - learned that I should be using a for loop.
-let rock = document.getElementById("rockid");
-let paper = document.getElementById("paperid");
-let scissors = document.getElementById("scissorsid");
-
-rock.addEventListener("click", playerThrow);
-paper.addEventListener("click", playerThrow);
-scissors.addEventListener("click", playerThrow);
-
-function playerThrow(){
-  return rock.getAttribute('data-element');
-};
-*/
-
 let btns = document.querySelectorAll('button');
 
+
 btns.forEach(function (i) {
-  i.addEventListener('click', function(){
-    i.getAttribute('data-element');
+  i.addEventListener('click', function() {
+    player = i.getAttribute('value');
+
+    playRound(player, computer);
+
   });
 });
 
-function playRound(player, computer){
-
-  player = btns;
+function playRound(player, computer) {
+  
   computer = getComputerThrow();
+  player = player;
   console.log(computer);
+  console.log(player);
 
   if (player == "rock"){
     if (computer == "scissors"){
