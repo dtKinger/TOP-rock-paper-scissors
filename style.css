@@ -86,7 +86,7 @@ button:active {
   color: black;
   text-align: center;
   font-weight: 900;
-  font-size: 70px;
+  font-size: 3rem;
   position: absolute;
   margin: 0 auto;
   top: 25vh;
@@ -94,18 +94,27 @@ button:active {
   display: none;
 }
 
+.animate{
+  display: block;
+  animation: throwIn 1s;
+}
+
 @media screen and (max-width: 480px){
   .result-msg{
   top: 15vh;
   }
+
+  .animate{
+    animation: throwInMobile 1s;
+  }
 }
 
-.animate{
-  display: block;
-  animation: fadeIn 2s;
+@keyframes throwIn {
+  0% { opacity: 0; top:0vh; }
+  100% { opacity: 1; top:25vh;  }
 }
 
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+@keyframes throwInMobile {
+  0% { opacity: 0; top:0vh; }
+  100% { opacity: 1; top:15vh; }
 }
