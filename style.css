@@ -144,7 +144,7 @@ button:active {
   }
 
   .result-msg{
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 
   .computer-throw{
@@ -162,7 +162,7 @@ button:active {
 
 @keyframes throwIn {
   0% { opacity: 0; top:0vh; transform: translate(-40rem, -10rem) rotate(-360deg) scale(0);}
-  100% { opacity: 1; top:25vh; transform: translate(0%, 0%) rotate(0deg) scale(1);}
+  100% { opacity: 1; top:20vh; transform: translate(0%, 0%) rotate(0deg) scale(1);}
 }
 
 @keyframes throwInMobile {
@@ -172,7 +172,7 @@ button:active {
 
 @keyframes compThrowIn {
   0% { opacity: 0; top:0vh; transform: translate(40rem, 10rem) rotate(-360deg) scale(0);}
-  100% { opacity: 1; top:25vh; transform: translate(0%, 0%) rotate(0deg) scale(1);}
+  100% { opacity: 1; top:20vh; transform: translate(0%, 0%) rotate(0deg) scale(1);}
 }
 
 @keyframes compThrowInMobile {
