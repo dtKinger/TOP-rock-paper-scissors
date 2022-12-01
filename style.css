@@ -101,6 +101,7 @@ button:active {
 
 @media screen and (max-width: 480px){
   .result-msg{
+    font-size: 2rem;
   top: 15vh;
   }
 
