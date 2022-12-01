@@ -66,4 +66,5 @@ button:hover{
 .choices{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
