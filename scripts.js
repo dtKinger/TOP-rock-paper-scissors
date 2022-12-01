@@ -53,7 +53,12 @@ btns.forEach(function (rm) {
     };
     
     resultsMessage.textContent = rsltMsg;
-    resultsMessage.style.display = "block";
+    /* Clear the animate class and add it again 
+    after a 10ms timeout to restart the animation */
+    resultsMessage.classList.remove("animate");
+    setTimeout(() => {
+      resultsMessage.classList.add("animate");
+    }, 10)
   });
 });
 

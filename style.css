@@ -83,6 +83,7 @@ button:hover{
   position: absolute;
   margin: 0 auto;
   top: 35vh;
+  padding: 0px 20px;
   display: none;
 }
 
@@ -90,4 +91,14 @@ button:hover{
   .result-msg{
   top: 25vh;
   }
+}
+
+.animate{
+  display: block;
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
