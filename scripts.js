@@ -5,32 +5,40 @@
 4. Allow for a game reset / Try again.
 */
 
+// Initialize game's inputs. App doesn't run without this.
 let computer = null;
 let playerThrow = null;
 
+// Create an array for the computer to choose from.
 const throwOptions = ["rock", "paper", "scissors"];
 
+// Pick a random index in throwOptions array, which grabs its value.
 function getComputerThrow(){
   return throwOptions[Math.floor(Math.random() * throwOptions.length)];
 }
 
+// Select all buttons inside a .choices class (limited selector scope)
 const choices = document.querySelector('.choices');
 const btns = choices.querySelectorAll('button');
 
-
+// for Each loops to add an event listener to buttons
 btns.forEach(function (i) {
   i.addEventListener('click', function() {
     playerThrow = i.getAttribute('value');
 
+    // Play the round immediately when the player throws.
     playRound(playerThrow, computer);
 
   });
 });
 
+/* ============================
+Playing one round of the game
+============================= */
 function playRound(playerX, computerX) {
   
   computer = getComputerThrow();
-  /* player = playerThrow; */
+  // player = playerThrow;
   console.log("Computer throws down " + computer.toUpperCase() + "!");
   console.log(`Player throws down ${playerThrow}!`);
 
