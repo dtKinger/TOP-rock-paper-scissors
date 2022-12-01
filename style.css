@@ -138,6 +138,6 @@ button:active {
 }
 
 @keyframes throwInMobile {
-  0% { opacity: 0; top:0vh; transform: rotate(-180deg);}
-  100% { opacity: 1; top:15vh; transform: rotate(0deg);}
+  0% { opacity: 0; top:0vh; transform: translate(-20rem, -5rem) rotate(-360deg) scale(0);}
+  100% { opacity: 1; top:15vh; transform: translate(0%, 0%) rotate(0deg) scale(1);}
 }
