@@ -1,4 +1,12 @@
-let computer;
+/* TO DO
+1. Make a results message container instead of an Alert box
+2. Figure out how to count a win and keep score for Player and Computer
+3. Figure how to End the game when one hits 5 wins.
+4. Allow for a game reset / Try again.
+*/
+
+let computer = null;
+let playerThrow = null;
 
 const throwOptions = ["rock", "paper", "scissors"];
 
