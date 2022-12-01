@@ -11,9 +11,9 @@ let btns = document.querySelectorAll('button');
 
 btns.forEach(function (i) {
   i.addEventListener('click', function() {
-    player = i.getAttribute('value');
+    playerThrow = i.getAttribute('value');
 
-    playRound(player, computer);
+    playRound(playerThrow, computer);
 
   });
 });
@@ -21,11 +21,11 @@ btns.forEach(function (i) {
 function playRound(playerX, computerX) {
   
   computer = getComputerThrow();
-  player = player;
-  console.log(computer);
-  console.log(player);
+  /* player = playerThrow; */
+  console.log("Computer throws down " + computer.toUpperCase() + "!");
+  console.log(`Player throws down ${playerThrow}!`);
 
-  if (player == "rock"){
+  if (playerThrow == "rock"){
     if (computer == "scissors"){
       alert("YOUR ROCK smashes the scissors to pieces!");
     } else if (computer == "paper" ) {
@@ -33,7 +33,7 @@ function playRound(playerX, computerX) {
     } else {
       alert("DRAW!");
     }
-  } else if (player == "paper"){
+  } else if (playerThrow == "paper"){
     if (computer == "scissors"){
       alert("COMPUTER SCISSOR HANDS dices you up!");
     } else if (computer == "rock" ) {
@@ -41,7 +41,7 @@ function playRound(playerX, computerX) {
     } else {
       alert("DRAW!");
     }
-  } else if (player == "scissors"){
+  } else if (playerThrow == "scissors"){
     if (computer == "paper"){
       alert("YOU absolutely SHRED what they're printing out!");
     } else if (computer == "rock" ) {
