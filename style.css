@@ -79,17 +79,17 @@ button:hover{
   color: black;
   text-align: center;
   font-weight: 900;
-  font-size: 36px;
+  font-size: 70px;
   position: absolute;
   margin: 0 auto;
-  top: 35vh;
+  top: 25vh;
   padding: 0px 20px;
   display: none;
 }
 
 @media screen and (max-width: 480px){
   .result-msg{
-  top: 25vh;
+  top: 15vh;
   }
 }
 

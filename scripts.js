@@ -53,13 +53,11 @@ btns.forEach(function (rm) {
     };
     
     resultsMessage.textContent = rsltMsg;
-
-    /*
-    const el = this;
-      var newone = elm.cloneNode(true);
-      elm.parentNode.replaceChild(newone, elm);
+    
+    /* 
+    Reset animation every click. Clone the results message
+    then replace the old with the clone! 
     */
-
     let newResultsMessage = resultsMessage.cloneNode(true);
     resultsMessage.parentNode.replaceChild(newResultsMessage, resultsMessage);
     
