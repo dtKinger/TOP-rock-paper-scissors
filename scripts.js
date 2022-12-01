@@ -8,6 +8,9 @@
 // Initialize game's inputs. App doesn't run without this.
 let computer = null;
 let playerThrow = null;
+const winningMsg = "You WIN this round!";
+const losingMsg = "You LOSE this round!";
+const tyingMsg = "TIE, Throw again!";
 
 // Create an array for the computer to choose from.
 const throwOptions = ["rock", "paper", "scissors"];
@@ -37,7 +40,9 @@ btns.forEach(function (i) {
 btns.forEach(function (rm) {
   rm.addEventListener('click', function() {
     let resultsMessage = document.getElementById("result-msg");
-    resultsMessage.style.color = "blue";
+    resultsMessage.style.color = 
+    function(){
+    };
     resultsMessage.textContent = rsltMsg;
     resultsMessage.style.display = "block";
   });
@@ -56,27 +61,27 @@ function playRound(playerX, computerX) {
 
   if (playerThrow == "rock"){
     if (computer == "scissors"){
-      rsltMsg = "YOUR ROCK smashes the scissors to pieces!";
+      rsltMsg = winningMsg;
     } else if (computer == "paper" ) {
-      rsltMsg = "COMPUTER'S PRINTER PAPER smothers your pet rock!";
+      rsltMsg = losingMsg;
     } else {
-      rsltMsg = "DRAW!";
+      rsltMsg = tyingMsg;
     }
   } else if (playerThrow == "paper"){
     if (computer == "scissors"){
-      rsltMsg = "COMPUTER SCISSOR HANDS dices you up!";
+      rsltMsg = losingMsg;
     } else if (computer == "rock" ) {
-      rsltMsg = "YOU SMOTHER the computer's pet rock!";
+      rsltMsg = winningMsg;
     } else {
-      rsltMsg = "DRAW!";
+      rsltMsg = tyingMsg;
     }
   } else if (playerThrow == "scissors"){
     if (computer == "paper"){
-      rsltMsg = "YOU absolutely SHRED what they're printing out!";
+      rsltMsg = winningMsg;
     } else if (computer == "rock" ) {
-      rsltMsg = "Your scissors are now scissorses... they've been smashed to pieces by ELECTRONIC ROCK!";
+      rsltMsg = losingMsg;
     } else {
-      rsltMsg = "DRAW!";
+      rsltMsg = tyingMsg;
     }
   }   
 };
