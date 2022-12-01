@@ -18,7 +18,7 @@ btns.forEach(function (i) {
   });
 });
 
-function playRound(player, computer) {
+function playRound(playerX, computerX) {
   
   computer = getComputerThrow();
   player = player;
