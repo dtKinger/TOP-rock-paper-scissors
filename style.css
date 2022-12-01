@@ -29,11 +29,6 @@ footer{
   gap: 10px;
 }
 
-footer ul li{
-  flex: 1;
-}
-
-
 
 button{
   background-color: black;
@@ -48,7 +43,7 @@ button{
 
 button:hover{
   cursor: pointer;
-  transform: scale(1.25);
+  transform: scale(1.15);
 }
 
 button:active {
