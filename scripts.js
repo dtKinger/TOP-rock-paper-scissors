@@ -10,11 +10,11 @@
 
 // Initialize game's inputs. App doesn't run without this.
 let computer = null;
-let playerThrow = null;
+//let playerThrow = null; Does not need to be initialized
 let plyrScr = 0;
 let compScr = 0;
-let leader = 0;
-let gmOvr = null;
+//let leader = 0; Does not need to be initialized
+//let gmOvr = null; Does not need to be initialized
 
 // Initialize some values. App would still run but have empty results.
 const winningMsg = "You WIN this round!";
