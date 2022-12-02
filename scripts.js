@@ -8,6 +8,8 @@
 // Initialize game's inputs. App doesn't run without this.
 let computer = null;
 let playerThrow = null;
+let computerScore = null;
+let playerScore = null;
 // Initialize some values. App would still run but have empty results.
 const winningMsg = "You WIN this round!";
 const losingMsg = "You LOSE this round!";
