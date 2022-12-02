@@ -89,24 +89,12 @@ button:active {
   text-align: center;
 }
 
-.item{
-  display: flex;
-  flex: 1;
-  background-color: royalblue;
-  border-radius: 20px;
-  padding: 20px;
-  min-width: 300px;
-  max-width: 80%;
-  justify-content: center;
-}
-
 .results{
   margin: 0 auto;
   top: 0vh;
   position: relative;
   padding: 0px 20px 40px 20px;
   min-height: 20vh;
-  
 }
 
 .result-msg{
