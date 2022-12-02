@@ -33,19 +33,24 @@ function audioScissors(){
   soundFile.play();
 }
 
-/*
+/* Using this method gives the error
+"DOMException: Failed to load because 
+no supported source was found". And
+I can't seem to solve why.
+
 btns.forEach(function (a) {
   a.addEventListener('click', function() {
     track = console.log(a.getAttribute('id'))
-    if (track == 'audio-rock'){
+    if (track == 'rock-btn'){
       playTrack = 'sound_rock.mp3';
-    } else if (track == 'audio-paper'){
+    } else if (track == 'paper-btn'){
       playTrack = 'sound_paper.wav';
-    } else if (track == 'audio-scissors'){
+    } else if (track == 'paper-scissors'){
       playTrack = 'sound_scissors.wav';
     }
   
-    playSound(a);
+  let playSound = new Audio('playTrack');
+  playSound.play();
 
   });
 });
