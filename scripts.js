@@ -1,7 +1,10 @@
 /* TO DO
+1. Animate the game to make it fun.
 2. Figure out how to count a win and keep score for Player and Computer
 3. Figure how to End the game when one hits 5 wins.
 4. Allow for a game reset / Try again.
+5. Make a load screen - button to start Game (for loop counting to 5)
+6. Make an end of Game modal
 */
 
 // Initialize game's inputs. App doesn't run without this.
@@ -9,6 +12,8 @@ let computer = null;
 let playerThrow = null;
 let plyrScr = 0;
 let compScr = 0;
+let leader = 0;
+let gmOvr = null;
 
 // Initialize some values. App would still run but have empty results.
 const winningMsg = "You WIN this round!";
@@ -124,4 +129,51 @@ function playRound(playerX, computerX) {
   
   playerScore.textContent = plyrScr.toString();
   computerScore.textContent = compScr.toString();
+
+  // Calucalte who's currently in the lead
+  calcLeader();
+
+
+  // Be ready to end if someone wins
+  let gameOver = document.getElementById("game-over-modal");
+  let gameOverMsg = document.getElementById("game-over-msg");
+
+  if (leader == 5 && leader == plyrScr){
+    gmOvr = "You WON!";
+    gameOverMsg.textContent = gmOvr;
+    gameOver.style.display = 'block';
+  } else if (leader == 5 && leader == compScr){
+    gmOvr = "You LOST to the computer!";
+    gameOverMsg.textContent = gmOvr;
+    gameOver.style.display = 'block';
+  }
+
+};
+
+
+
+/* =========================
+End of playRound() function
+========================= */
+
+/* ====================
+START game() Function!
+==================== */
+
+function calcLeader(){
+  if (plyrScr >= compScr){
+    leader = plyrScr;
+  } else if (compScr >= plyrScr){
+    leader = compScr;
+  }
+  return leader;
+};
+
+function game(){
+
+  for (let i = 0; i < 5; i++) {
+
+  // Play a round
+  playRound();
+  }
 };

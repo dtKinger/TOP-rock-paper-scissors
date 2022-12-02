@@ -14,7 +14,7 @@
       <div class="section-wrapper">
         <div class="container">
           <div class="results">
-            <div id="result-msg" class="result-msg animate">Best of 5 Rounds. Man vs. Machine.</div>
+            <div id="result-msg" class="result-msg animate">First to 5 wins! Man vs. Machine.</div>
             <div id="computer-throw" class="computer-throw animate-right"></div>
           </div>
           <h2>How will you throw down this round?</h2>
@@ -22,6 +22,12 @@
             <button value="rock" ontouchstart="">Rock</button>
             <button value="paper" ontouchstart="">Paper</button>
             <button value="scissors" ontouchstart="">Scissors</button>
+          </div>
+          <div class="modal game-over" id="game-over-modal">
+            <div class="modal-content">
+            <p id="game-over-msg">This shouldn't show by default</p>
+            <button><a href="/">Play again</a></button>
+          </div>
           </div>
 
         <div><h2 class="score-title">Score:</h2></div>
