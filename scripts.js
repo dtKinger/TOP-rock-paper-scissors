@@ -5,6 +5,7 @@
 4. Allow for a game reset / Try again.
 5. Make a load screen - button to start Game (for loop counting to 5)
 6. Make an end of Game modal
+7. Make a loading/ opening screen
 */
 
 // Initialize game's inputs. App doesn't run without this.
@@ -28,11 +29,9 @@ function getComputerThrow(){
   return throwOptions[Math.floor(Math.random() * throwOptions.length)];
 }
 
-
 // Select all buttons inside a .choices class (limited selector scope)
 const choices = document.querySelector('.choices');
 const btns = choices.querySelectorAll('button');
-
 
 // for Each loop to add a VALUE event listener to buttons
 btns.forEach(function (i) {
@@ -79,8 +78,6 @@ btns.forEach(function (rm) {
     let newcomputerMessage = computerMessage.cloneNode(true);
     computerMessage.parentNode.replaceChild(newcomputerMessage, computerMessage);
     
-
-
   });
 });
 
@@ -129,37 +126,16 @@ function playRound(playerX, computerX) {
   
   playerScore.textContent = plyrScr.toString();
   computerScore.textContent = compScr.toString();
-
-  // Calucalte who's currently in the lead
-  calcLeader();
-
-
-  // Be ready to end if someone wins
-  let gameOver = document.getElementById("game-over-modal");
-  let gameOverMsg = document.getElementById("game-over-msg");
-
-  if (leader == 5 && leader == plyrScr){
-    gmOvr = "You WON!";
-    gameOverMsg.textContent = gmOvr;
-    gameOver.style.display = 'block';
-  } else if (leader == 5 && leader == compScr){
-    gmOvr = "You LOST to the computer!";
-    gameOverMsg.textContent = gmOvr;
-    gameOver.style.display = 'block';
-  }
+  
+  // When someone hits 5 points, end the game.
+  weHaveAWinner();
 
 };
-
-
-
 /* =========================
 End of playRound() function
 ========================= */
 
-/* ====================
-START game() Function!
-==================== */
-
+// Calculate who's in the lead
 function calcLeader(){
   if (plyrScr >= compScr){
     leader = plyrScr;
@@ -169,11 +145,23 @@ function calcLeader(){
   return leader;
 };
 
-function game(){
+// We have a winner
+function weHaveAWinner(){
 
-  for (let i = 0; i < 5; i++) {
+  // Calucalte who's currently in the lead
+  calcLeader();
+  
+  // Be ready to end if someone wins
+  let gameOver = document.getElementById("game-over-modal");
+  let gameOverMsg = document.getElementById("game-over-msg");
 
-  // Play a round
-  playRound();
+  if (leader == 5 && leader == plyrScr){
+    gmOvr = "Congratulations, You WON!";
+    gameOverMsg.textContent = gmOvr;
+    gameOver.style.display = 'block';
+  } else if (leader == 5 && leader == compScr){
+    gmOvr = "Sorry, you LOST to the computer!";
+    gameOverMsg.textContent = gmOvr;
+    gameOver.style.display = 'block';
   }
 };
