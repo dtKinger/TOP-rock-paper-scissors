@@ -1,14 +1,14 @@
 /* TO DO
-1. Animate the game to make it fun.
-2. Figure out how to count a win and keep score for Player and Computer
-3. Figure how to End the game when one hits 5 wins.
-4. Allow for a game reset / Try again.
-5. Make a load screen - button to start Game (for loop counting to 5)
-6. Make an end of Game modal
-7. Make a loading/ opening screen
+1. Make a landing/loading screen?
+2. Figure out how to make sound files play onclick
+using addEventListener and not onclick="" in the markup
 */
 
-// Initialize game's inputs. App doesn't run without this.
+/* ==========================
+Initialize game's inputs.
+ App doesn't run without this.
+=============================*/
+
 let computer = null;
 //let playerThrow = null; Does not need to be initialized
 let plyrScr = 0;
@@ -29,11 +29,20 @@ function getComputerThrow(){
   return throwOptions[Math.floor(Math.random() * throwOptions.length)];
 }
 
-// Select all buttons inside a .choices class (limited selector scope)
+
+/* ======================================
+Instead of text input for the Player, use
+buttons and get their value in a for loop
+======================================= */
+
+// Select all buttons inside a .choices class
+// This limits the scope and saves resources AFAIK
 const choices = document.querySelector('.choices');
 const btns = choices.querySelectorAll('button');
 
-// for Each loop to add a VALUE event listener to buttons
+/* This records the players's throw. Using a for Each 
+loop to add a VALUE event listener to all buttons inside 
+the .choices class, assigning the value as the playerThrow */
 btns.forEach(function (i) {
   i.addEventListener('click', function() {
     playerThrow = i.getAttribute('value');
@@ -41,43 +50,6 @@ btns.forEach(function (i) {
     // Play the round immediately when the player throws.
     playRound(playerThrow, computer);
 
-  });
-});
-
-/* ==========================================
-for Each loop to add a RESULTS MESSAGE event 
-listener to buttons (for bonus marks!)
-========================================== */
-btns.forEach(function (rm) {
-  rm.addEventListener('click', function() {
-    // Assign a different color based on Win, Tie, Loss
-    // And also throw the computer's choice.
-    let resultsMessage = document.getElementById("result-msg");
-    let computerMessage = document.getElementById("computer-throw");
-    
-    if (rsltMsg == winningMsg){
-      resultsMessage.style.color = "darkgreen";
-    } else if (rsltMsg == tyingMsg) {
-      resultsMessage.style.color = "darkblue";
-    } else if (rsltMsg == losingMsg) {
-      resultsMessage.style.color = "#f91c1c";
-    };
-    
-    resultsMessage.textContent = rsltMsg;
-    computerMessage.textContent = `The computer throws ${computer}.`;
-    
-
-    /* 
-    Reset animation every click. Clone the results message
-    then replace the old with the clone! 
-    */
-    let newResultsMessage = resultsMessage.cloneNode(true);
-    resultsMessage.parentNode.replaceChild(newResultsMessage, resultsMessage);
-
-    // Repeat the reset for Computer throw animation
-    let newcomputerMessage = computerMessage.cloneNode(true);
-    computerMessage.parentNode.replaceChild(newcomputerMessage, computerMessage);
-    
   });
 });
 
@@ -135,6 +107,44 @@ function playRound(playerX, computerX) {
 End of playRound() function
 ========================= */
 
+/* ==========================================
+for Each loop to add a RESULTS MESSAGE event 
+listener to buttons and show who won the round.
+========================================== */
+btns.forEach(function (rm) {
+  rm.addEventListener('click', function() {
+    // Assign a different color based on Win, Tie, Loss
+    // And also throw the computer's choice.
+    let resultsMessage = document.getElementById("result-msg");
+    let computerMessage = document.getElementById("computer-throw");
+    
+    if (rsltMsg == winningMsg){
+      resultsMessage.style.color = "darkgreen";
+    } else if (rsltMsg == tyingMsg) {
+      resultsMessage.style.color = "darkblue";
+    } else if (rsltMsg == losingMsg) {
+      resultsMessage.style.color = "#f91c1c"; // red
+    };
+    
+    // Display the result of the round and computer's choice.
+    resultsMessage.textContent = rsltMsg;
+    computerMessage.textContent = `The computer throws ${computer}.`;
+    
+
+    /* 
+    Reset animation every click. Clone the results 
+    message then replace the old with the clone! 
+    */
+    let newResultsMessage = resultsMessage.cloneNode(true);
+    resultsMessage.parentNode.replaceChild(newResultsMessage, resultsMessage);
+
+    // Repeat the reset for Computer throw animation
+    let newcomputerMessage = computerMessage.cloneNode(true);
+    computerMessage.parentNode.replaceChild(newcomputerMessage, computerMessage);
+    
+  });
+});
+
 // Calculate who's in the lead
 function calcLeader(){
   if (plyrScr >= compScr){
@@ -145,7 +155,8 @@ function calcLeader(){
   return leader;
 };
 
-// We have a winner
+/* We have a winner. This is called at the end of
+the big playRound()function. */
 function weHaveAWinner(){
 
   // Calucalte who's currently in the lead
