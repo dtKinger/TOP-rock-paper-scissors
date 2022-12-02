@@ -94,7 +94,7 @@ button:active {
   top: 0vh;
   position: relative;
   padding: 0px 20px 40px 20px;
-  min-height: 23vh;
+  min-height: 20vh;
 }
 
 .result-msg{
@@ -133,6 +133,7 @@ button:active {
   .results{
     top: 0vh;
     position: relative;
+    min-height: 23vh;
   }
 
   .result-msg{
