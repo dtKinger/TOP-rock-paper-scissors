@@ -1,5 +1,4 @@
 /* TO DO
-1. Make a results message container instead of an Alert box
 2. Figure out how to count a win and keep score for Player and Computer
 3. Figure how to End the game when one hits 5 wins.
 4. Allow for a game reset / Try again.
@@ -8,8 +7,9 @@
 // Initialize game's inputs. App doesn't run without this.
 let computer = null;
 let playerThrow = null;
-let computerScore = null;
-let playerScore = null;
+let plyrScr = 0;
+let compScr = 0;
+
 // Initialize some values. App would still run but have empty results.
 const winningMsg = "You WIN this round!";
 const losingMsg = "You LOSE this round!";
@@ -22,6 +22,7 @@ const throwOptions = ["rock", "paper", "scissors"];
 function getComputerThrow(){
   return throwOptions[Math.floor(Math.random() * throwOptions.length)];
 }
+
 
 // Select all buttons inside a .choices class (limited selector scope)
 const choices = document.querySelector('.choices');
@@ -89,55 +90,38 @@ function playRound(playerX, computerX) {
   console.log("Computer throws down " + computer.toUpperCase() + "!");
   console.log(`Player throws down ${playerThrow}!`);
 
+  // Score variables and assignment
+  let playerScore = document.getElementById('player-score')
+  let computerScore = document.getElementById('computer-score')
+
   if (playerThrow === computer){
     rsltMsg = tyingMsg
   } else if (playerThrow == "rock"){
     if (computer == "scissors"){
       rsltMsg = winningMsg
+      ++plyrScr
     } else if (computer == "paper") {
       rsltMsg = losingMsg
+      ++compScr
     }
   } else if (playerThrow == "paper"){
     if (computer == "rock"){
       rsltMsg = winningMsg
+      ++plyrScr
     } else if (computer == "scissors") {
       rsltMsg = losingMsg
+      ++compScr
     }
   } else if (playerThrow == "scissors"){
     if (computer == "paper"){
       rsltMsg = winningMsg
+      ++plyrScr
     } else if (computer == "rock") {
       rsltMsg = losingMsg
+      ++compScr
     }
   }
+  
+  playerScore.textContent = plyrScr.toString();
+  computerScore.textContent = compScr.toString();
 };
-
-
-  /*
-  if (playerThrow == "rock"){
-    if (computer == "scissors"){
-      rsltMsg = winningMsg;
-    } else if (computer == "paper" ) {
-      rsltMsg = losingMsg;
-    } else {
-      rsltMsg = tyingMsg;
-    }
-  } else if (playerThrow == "paper"){
-    if (computer == "scissors"){
-      rsltMsg = losingMsg;
-    } else if (computer == "rock" ) {
-      rsltMsg = winningMsg;
-    } else {
-      rsltMsg = tyingMsg;
-    }
-  } else if (playerThrow == "scissors"){
-    if (computer == "paper"){
-      rsltMsg = winningMsg;
-    } else if (computer == "rock" ) {
-      rsltMsg = losingMsg;
-    } else {
-      rsltMsg = tyingMsg;
-    }
-  }   
-};
-*/
