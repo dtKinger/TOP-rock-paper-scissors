@@ -55,11 +55,13 @@ button:active {
 
 .page-wrapper{
   max-width: 100vw;
+  background-image: url('crossline-dots-bisque.jpg');
+  background-repeat: repeat;
 }
 
 .section-wrapper{
   height: 100vh;
-  background-color: bisque;
+  /* background-color: bisque; */
   padding: 30px 30px;
   display: flex;
   gap: 10px;
