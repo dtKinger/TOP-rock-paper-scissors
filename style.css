@@ -152,6 +152,19 @@ button:active {
   margin: 0px 10px;
 }
 
+.start-over{
+  background-color: lightcyan;
+  padding: 8px 16px;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 40px;
+  min-width: 120px;
+}
+
+.restart{
+  max-height: 80px;
+}
+
 .animate{
   display: block;
   animation: throwIn 0.75s;
