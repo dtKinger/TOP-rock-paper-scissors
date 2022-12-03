@@ -24,7 +24,7 @@ function audioRock(){
 }
 
 function audioPaper(){
-  let soundFile = new Audio('sound_paper.wav');
+  let soundFile = new Audio('sound_paper.mp3');
   soundFile.play();
 }
 
@@ -44,7 +44,7 @@ btns.forEach(function (a) {
     if (track == 'rock-btn'){
       playTrack = 'sound_rock.mp3';
     } else if (track == 'paper-btn'){
-      playTrack = 'sound_paper.wav';
+      playTrack = 'sound_paper.mp3';
     } else if (track == 'paper-scissors'){
       playTrack = 'sound_scissors.wav';
     }
