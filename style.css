@@ -257,3 +257,10 @@ button:active {
   position: absolute;
   right: -115px;
 }
+
+.computer-choice{
+  color: lightcoral;
+  background-color: black;
+  border-radius: 5px;
+  padding: 2px 12px 5px 12px;
+}
