@@ -128,7 +128,8 @@ btns.forEach(function (rm) {
     
     // Display the result of the round and computer's choice.
     resultsMessage.textContent = rsltMsg;
-    computerMessage.textContent = `The computer throws ${computer}.`;
+    computerMessage.innerHTML = `The computer threw <span style='color: lightcoral; background-color: black; border-radius: 5px; padding: 2px 12px 5px 12px;'>${computer}</span>.`
+    // "The computer threw " + "<span style='color: lightcoral;'>" + computer + "</span>";
     
 
     /* 
